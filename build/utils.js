@@ -13,7 +13,7 @@ function resolve(relatedPath) {
  * @returns {{}}
  */
 exports.entries = function () {
-  let entryFiles = glob.sync(PAGE_PATH + '/*/*.js')
+  let entryFiles = glob.sync(PAGE_PATH + '/*/*.ts')
   let map = {}
   entryFiles.forEach((filePath) => {
     let entryPath = path.dirname(filePath)

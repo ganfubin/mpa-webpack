@@ -1,5 +1,5 @@
 <template>
-  <div id="app">这个也是一个页面</div>
+  <div id="app">这个也是11111个页面</div>
 </template>
 
 <style lang="less" scoped>

@@ -41,7 +41,7 @@ module.exports = {
     chunkFilename: `js/[name]/${version}.js`,
   },
   resolve: {
-    extensions: ['.js', '.json', '.vue'],
+    extensions: ['.js', '.ts', '.json', '.vue'],
     alias: {
       'vue': 'vue/dist/vue.js',
       '@': resolve('../src'),
@@ -67,6 +67,17 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.ts?$/,
+        exclude: /node_modules/,
+        use: [
+          "babel-loader",
+          {
+            loader: "ts-loader",
+            options: { appendTsxSuffixTo: [/\.vue$/] }
+          },
+        ]
       },
       {
         test: /\.css$/,
